@@ -25,7 +25,7 @@ function downloadVideo($video_url, $geturl = false)
         CURLOPT_HTTPHEADER     => $headers,
         CURLOPT_FOLLOWLOCATION => true,
         CURLINFO_HEADER_OUT    => true,
-        CURLOPT_USERAGENT => 'okhttp',
+        CURLOPT_USERAGENT => 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Mobile Safari/537.36',
         CURLOPT_ENCODING       => "utf-8",
         CURLOPT_AUTOREFERER    => true,
         CURLOPT_COOKIEJAR      => 'cookie.txt',
@@ -119,7 +119,7 @@ function getContent($url, $geturl = false)
         CURLOPT_HEADER         => false,
         CURLOPT_HTTPHEADER     => $headers,
         CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_USERAGENT => 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:28.0) Gecko/20100101 Firefox/28.0',
+        CURLOPT_USERAGENT => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
         CURLOPT_ENCODING       => "utf-8",
         CURLOPT_AUTOREFERER    => false,
         CURLOPT_COOKIEJAR      => 'cookie.txt',
@@ -199,7 +199,7 @@ function getContent($url, $geturl = false)
 		if (isset($_POST['tiktok-url']) && !empty($_POST['tiktok-url'])) {
 			$url = trim($_POST['tiktok-url']);
 			$resp = getContent($url);
-			//echo "$resp";
+			echo "$resp";
 			$check = explode('"downloadAddr":"', $resp);
 			if (count($check) > 1){
 				$contentURL = explode("\"",$check[1])[0];
@@ -274,7 +274,7 @@ function getContent($url, $geturl = false)
 	<div class="m-5">
 		&nbsp;
 	</div>
-	<div class="bg-dark text-white" style="position: fixed; bottom: 0;width: 100%;padding:15px">Developed by <a target="_blank" href="https://www.github.com/TufayelLUS">tufayel.rocks</a> <span style="float: right;">Copyright &copy; <?php echo date("Y"); ?></span></div>
+	<div class="bg-dark text-white" style="position: fixed; bottom: 0;width: 100%;padding:15px">Developed by <a target="_blank" href="https://www.github.com/TufayelLUS">Zidan Bots</a> <span style="float: right;">Copyright &copy; <?php echo date("Y"); ?></span></div>
     <script type="text/javascript">
         window.setInterval(function(){
             if ($("input[name='tiktok-url']").attr("placeholder") == "https://www.tiktok.com/@username/video/1234567890123456789") {
